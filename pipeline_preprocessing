@@ -1,0 +1,16 @@
+// Pipeline de Preprocesamiento
+digraph {
+	A [label=ColumnTransformer]
+	B [label="Numéricas:
+KBinsDiscretizer
+(Precio, Consumo, Mantenimiento)"]
+	C [label="Categóricas:
+OneHotEncoder
+(Marca, Tipo, etc.)"]
+	D [label="Salida:
+Matriz Preprocesada"]
+	A -> B
+	A -> C
+	B -> D
+	C -> D
+}
